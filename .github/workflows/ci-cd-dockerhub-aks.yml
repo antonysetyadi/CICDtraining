@@ -142,21 +142,21 @@ jobs:
       #     resource-group: '${{ env.AKS_RESOURCE_GROUP }}'
       - name: Create namespace if not exists
         run: |
-          if [ -z "${{ var.NAMESPACE }}" ]; then
+          if [ -z "${{ env.DOCKERHUB_USERNAME }}" ]; then
             echo "ERROR: NAMESPACE environment variable is not set."
             exit 1
           fi
-          echo "Ensuring namespace exists: ${{ var.NAMESPACE }}"
-          kubectl get namespace "${{ var.NAMESPACE }}" >/dev/null 2>&1 || \
-            kubectl create namespace "${{ var.NAMESPACE }}"
+          echo "Ensuring namespace exists: ${{ env.DOCKERHUB_USERNAME }}"
+          kubectl get namespace "${{ env.DOCKERHUB_USERNAME }}" >/dev/null 2>&1 || \
+            kubectl create namespace "${{ env.DOCKERHUB_USERNAME}}"
       - name: Deploy all k8s manifests
         run: |
           set -euo pipefail
-          if [ -z "${{ var.NAMESPACE }}" ]; then
+          if [ -z "${{ env.DOCKERHUB_USERNAME }}" ]; then
             echo "ERROR: NAMESPACE environment variable is not set."
             exit 1
           fi
-          NS="${{ var.NAMESPACE }}"
+          NS="${{ env.DOCKERHUB_USERNAME }}"
           echo "Using namespace: $NS"
           # Create namespace if it doesn't exist (idempotent)
           kubectl get namespace "$NS" >/dev/null 2>&1 || kubectl create namespace "$NS"

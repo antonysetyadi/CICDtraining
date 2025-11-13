@@ -130,7 +130,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Execute Kubectl
         run: |
-          az aks get-credentials --resource-group '${{ secret.AKS_RESOURCE_GROUP }}' --name '${{ env.AKS_CLUSTER_NAME }}' --overwrite-existing
+          az aks get-credentials --resource-group '${{ secrets.AKS_RESOURCE_GROUP }}' --name '${{ secrets.AKS_CLUSTER_NAME }}' --overwrite-existing
           kubelogin convert-kubeconfig -l azurecli
           kubectl get ns
       ## from aks repo

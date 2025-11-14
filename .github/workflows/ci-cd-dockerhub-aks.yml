@@ -18,7 +18,7 @@ env:
   DOCKERHUB_USERNAME: antonysetyadi
   # If you want a different repo name, set the repository secret DOCKERHUB_REPO.
   # Otherwise the default below will be used by the workflow script.
-  DEFAULT_DOCKERHUB_REPO: pgmicroservice
+  DEFAULT_DOCKERHUB_REPO: cicdkiu
 
 jobs:
   build-and-test:

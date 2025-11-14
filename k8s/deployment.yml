@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pgmicroservice
-          image: asetyadi/pgmicroservice:latest
+          image: asetyadi/cicdkiu:latest
           ports:
             - containerPort: 3000
           env:

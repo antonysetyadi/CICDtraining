@@ -1,5 +1,5 @@
 {
-  "name": "pgmicroservice",
+  "name": "cicdkiu",
   "version": "1.0.0",
   "description": "Simple Node.js service using Azure PostgreSQL",
   "main": "server.js",

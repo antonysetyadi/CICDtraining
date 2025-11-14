@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pgmicroservice
+  name: cicdkiu
   labels:
-    app: pgmicroservice
+    app: cicdkiu
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: pgmicroservice
+      app: cicdkiu
   template:
     metadata:
       labels:
-        app: pgmicroservice
+        app: cicdkiu
     spec:
       containers:
-        - name: pgmicroservice
+        - name: cicdkiu
           image: asetyadi/cicdkiu:latest
           ports:
             - containerPort: 3000

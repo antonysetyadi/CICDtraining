@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: pgmicroservice-config
+  name: cicdkiu-config
 data:
   NODE_ENV: production
   PGDATABASE: users_dev
